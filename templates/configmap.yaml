@@ -17,6 +17,13 @@ data:
     {{- .Values.config.customPhpConfig | default "" | nindent 4 }}
   roundcube.config.php: |
     <?php
+    // generated core configuration
+    {{ if .Values.memcached.enabled }}
+    $config['session_storage'] = 'memcache';
+    $config['memcache_hosts'] = array( 'roundcube-memcached:11211');
+    {{ end }}
+
+    // generated plugin configuration
     {{ range $plugin, $settings := .Values.config.plugins }}
     // generated configuration for plugin {{ $plugin }}
     {{- if $settings -}}{{- if $settings.enabled -}}{{- range $key, $value := $settings.config }}
