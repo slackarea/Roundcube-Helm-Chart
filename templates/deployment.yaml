@@ -98,6 +98,9 @@ spec:
           ports:
             - containerPort: {{ .Values.deployment.port }}
               protocol: TCP
+          {{ if .Values.deployment.resources }}
+          resources: {{ .Values.deployment.resources | toYaml | nindent 12 }}
+          {{ end }}
           readinessProbe:
             httpGet:
               path: /
