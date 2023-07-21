@@ -3,6 +3,7 @@
 ## v1.11.0
 
   * Added support for `deployment.initContainers` (!10 by @.wojtek)
+  * Upgraded `bitnami/common` to v2.6.0
 
 ## v1.10.0
 
