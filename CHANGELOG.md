@@ -1,6 +1,9 @@
 # Changelog
 
+## v1.11.1
+
   * Changed nginx configuration to allow OAuth login (!11 by @alexanderkehr)
+  * Upgraded `bitnami/common` to v2.9.0
 
 ## v1.11.0
 
