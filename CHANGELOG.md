@@ -1,5 +1,7 @@
 # Changelog
 
+  * Changed nginx configuration to allow OAuth login (!11 by @alexanderkehr)
+
 ## v1.11.0
 
   * Added support for `deployment.initContainers` (!10 by @.wojtek)
