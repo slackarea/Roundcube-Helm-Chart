@@ -12,6 +12,45 @@
             "description": "ImagePullPolicy for Roundcube Docker image",
             "type": "string"
         },
+        "rbac": {
+        "type": "object",
+        "properties": {
+          "create": {
+            "type": "boolean",
+            "description": "Specifies whether RBAC resources should be created"
+           },
+          "rules": {
+            "type": "array",
+            "description": "List of rules to create",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": ["create"]
+        },
+      "serviceAccount": {
+        "type": "object",
+        "properties": {
+          "create": {
+            "type": "boolean",
+            "description": "Specifies whether ServiceAccount resource should be created"
+          },
+          "name": {
+            "type": ["string", "null"],
+            "description": "The name of the ServiceAccount to use. If not set and create is true, a name is generated using a template"
+          },
+          "additionalAnnotations": {
+            "type": "object",
+            "description": "Additional annotations for the ServiceAccount resource"
+          },
+          "additionalLabels": {
+            "type": "object",
+            "description": "Additional labels for the ServiceAccount resource"
+          }
+        },
+        "required": ["create"]
+        },
         "config": {
             "description": "Roundcube Core Configuration",
             "type": "object",

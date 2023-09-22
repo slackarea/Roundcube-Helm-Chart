@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.12.0
+
+  * Added support for `deployment.serviceAccountName` and `rbac`, allowing greater flexibility and compliance with OKD security models. 
+
 ## v1.11.1
 
   * Changed nginx configuration to allow OAuth login (!11 by @alexanderkehr)

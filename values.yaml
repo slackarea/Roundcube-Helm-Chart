@@ -5,6 +5,31 @@ image: roundcube/roundcubemail:{{ .Chart.AppVersion }}-fpm-alpine
 ## ImagePullPolicy for Roundcube Docker image
 imagePullPolicy: IfNotPresent
 
+## RBAC Role Based Access Control for resources
+rbac:
+  # Specifies whether RBAC resources should be created
+  create: false
+  rules: []
+  ## Enable RBAC rules
+    #  - apiGroups:
+    #    - myApiGroups
+    #    resourceNames:
+    #    - myResourceNames
+    #    resources:
+    #    - myResources
+    #    verbs:
+    #    - use
+
+## Service Account for Deployment
+serviceAccount:
+  # Specifies whether ServiceAccount resource should be created
+  create: false
+  # The name of the ServiceAccount to use.
+  # If not set and create is true, a name is generated using a template
+  name: ""
+  additionalLabels: {}
+  additionalAnnotations: {}
+
 ## Roundcube Core Configuration
 config:
 
