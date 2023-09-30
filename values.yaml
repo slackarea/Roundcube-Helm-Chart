@@ -110,12 +110,22 @@ config:
 ## Configuration for an external database (not deployed within this chart)
 ## When working with a NetworkPolicy, add an egress rule to networkPolicy.egress.additionalRules to allow access to the database.
 externalDatabase:
-  ## external database type. supported: mysql, pgsql, sqlite
+  ## Type of the external database. supported: mysql, pgsql, sqlite
   type: pgsql
+
+  ## Hostname of the external database server
   host:
+
+  ## Port number of the external database server
   port: 5432
+
+  ## Database name
   name: roundcube
+
+  ## Username for the external database server
   user: postgres
+
+  ## Password for the external database server
   password: postgres
 
 ## IMAP settings
@@ -184,6 +194,7 @@ deployment:
 
   ## Deployment strategy (see https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/deployment-v1/#DeploymentSpec)
   strategy:
+    ## Deployment strategy type
     type: RollingUpdate
 
   ## Roundcube container's HTTP port
@@ -196,9 +207,13 @@ deployment:
   ## Additional annotations for the Deployment resource
   additionalAnnotations: {}
 
-
+  ## Pod affinity rule preset (see https://docs.bitnami.com/tutorials/assign-pod-nodes-helm-affinity-rules/)
   podAffinityPreset: ""
+
+  ## Pod anti affinity rule preset (see https://docs.bitnami.com/tutorials/assign-pod-nodes-helm-affinity-rules/)
   podAntiAffinityPreset: hard
+
+  ## Custom affinity rules (overrides podAffinityPreset and podAntiAffinityPreset)
   affinity: {}
 
   ## Configure resource allocation and limits
