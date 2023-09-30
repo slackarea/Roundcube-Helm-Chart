@@ -2,7 +2,8 @@
 
 ## v1.12.0
 
-  * Added support for `deployment.serviceAccountName` and `rbac`, allowing greater flexibility and compliance with OKD security models. 
+  * Added support for `deployment.serviceAccountName` and `rbac`, allowing greater flexibility and compliance with OKD security models (!12 by @Intimaria)
+  * Upgraded `bitnami/common` to v2.13.0
 
 ## v1.11.1
 
