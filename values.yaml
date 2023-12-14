@@ -107,6 +107,25 @@ config:
     ## Configure custom memory limit for PHP
     # memory_limit=128M
 
+
+## Configure database creation/usage
+database:
+  ## Which database source should be used
+  ## Supported values:
+  ##   * external:         Do not create a database, but use an existing external database. See `externalDatabase` for further configuration.
+  ##   * zalando-postgres: Request a database to be created by Zalando Postgres operator (https://github.com/zalando/postgres-operator, operator needs to be preinstalled)
+  source: external
+
+  ## Number of database cluster instances to be launched
+  ## (only applicable for source=zalando-postgres)
+  instances: 2
+
+  ## Size of the volume to be created for the database
+  volumeSize: 5Gi
+
+  ## Name of the StorageClass to be used for the volume
+  storageClassName:
+
 ## Configuration for an external database (not deployed within this chart)
 ## When working with a NetworkPolicy, add an egress rule to networkPolicy.egress.additionalRules to allow access to the database.
 externalDatabase:

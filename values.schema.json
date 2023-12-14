@@ -105,6 +105,29 @@
         "plugins"
       ]
     },
+    "database": {
+      "description": "Configure database creation/usage",
+      "type": "object",
+      "properties": {
+        "source": {
+          "description": "Which database source should be used",
+          "type": "string",
+          "enum": ["external", "zalando-postgres"]
+        },
+        "instances": {
+          "description": "Number of database cluster instances to be launched",
+          "type": "integer"
+        },
+        "volumeSize": {
+          "description": "Size of the volume to be created for the database",
+          "type": "string"
+        },
+        "storageClassName": {
+          "description": "Name of the StorageClass to be used for the volume",
+          "type": "string"
+        }
+      }
+    },
     "externalDatabase": {
       "description": "Configuration for an external database (not deployed within this chart)",
       "type": "object",

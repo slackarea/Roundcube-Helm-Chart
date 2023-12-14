@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.0
+
+  * Feature: Allow for databases to be created directly from this chart, starting with PostgreSQL by Zalando Postgres Operator
+
 ## v1.12.0
 
   * Added support for `deployment.serviceAccountName` and `rbac`, allowing greater flexibility and compliance with OKD security models (!12 by @Intimaria)
