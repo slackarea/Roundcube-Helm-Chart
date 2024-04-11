@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.14.0
+## v1.12.0
 
   * FINALLY! Upgraded roundcube to v1.6.6 (#6)
   * Upgraded `bitnami/common` to v2.19.1
@@ -9,15 +9,8 @@
   * Added setting `deployment.containers.nginx.image` to allow to override nginx image (part of !16 by @ozguryazilimas)
   * Added setting `config.customPhpFpmConfig` to allow to define custom PHP-FPM settings (part of !16 by @ozguryazilimas)
   * Added setting `deployment.imagePullSecrets` to allow to refer to custom ImagePullSecrets (part of !16 by @ozguryazilimas)
-
-## v1.13.0
-
-  * Feature: Allow for databases to be created directly from this chart, starting with PostgreSQL by Zalando Postgres Operator
-
-## v1.12.0
-
   * Added support for `deployment.serviceAccountName` and `rbac`, allowing greater flexibility and compliance with OKD security models (!12 by @Intimaria)
-  * Upgraded `bitnami/common` to v2.13.0
+  * Allow for databases to be created directly from this chart, starting with PostgreSQL by Zalando Postgres Operator
 
 ## v1.11.1
 
