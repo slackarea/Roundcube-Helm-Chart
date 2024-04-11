@@ -335,6 +335,22 @@
         "initContainers": {
           "description": "Additional custom actions to be executed before deploying main container (e.g.: to prepare database)",
           "type": "array"
+        },
+        "containers": {
+          "description": "Container-specific configuration",
+          "type": "object",
+          "properties": {
+            "nginx": {
+              "description": "Settings for the nginx container",
+              "type": "object",
+              "properties": {
+                "image": {
+                  "description": "Image used for the nginx container",
+                  "type": "string"
+                }
+              }
+            }
+          }
         }
       },
       "required": [
