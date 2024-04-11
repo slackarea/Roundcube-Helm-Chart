@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.14.0
+
+  * FINALLY! Upgraded roundcube to v1.6.6 (#6)
+
 ## v1.13.0
 
   * Feature: Allow for databases to be created directly from this chart, starting with PostgreSQL by Zalando Postgres Operator

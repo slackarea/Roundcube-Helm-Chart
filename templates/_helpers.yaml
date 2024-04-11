@@ -78,8 +78,12 @@ ssl://
 
 
 {{- define "roundcube.deployment.command" -}}
-{{- if (or (include "roundcube.plugins.requirements" .) (include "roundcube.skins.requirements" .)) -}}
-(cd /usr/src/roundcubemail && composer require {{ include "roundcube.plugins.requirements" . }} {{ include "roundcube.skins.requirements" . }}) &&
+(cd /usr/src/roundcubemail && composer require roundcube/plugin-installer>=0.3.5) &&
+{{- if (include "roundcube.plugins.requirements" .) -}}
+(cd /usr/src/roundcubemail && composer require {{ include "roundcube.plugins.requirements" . }}) &&
+{{- end -}}
+{{- if (include "roundcube.skins.requirements" .) -}}
+(cd /usr/src/roundcubemail && composer require {{ include "roundcube.skins.requirements" . }}) &&
 {{- end -}}
 /docker-entrypoint.sh php-fpm
 {{- end -}}
