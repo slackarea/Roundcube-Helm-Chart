@@ -107,6 +107,12 @@ config:
     ## Configure custom memory limit for PHP
     # memory_limit=128M
 
+  ## Custom configuration for PHP-FPM
+  ## Comment lines with semicolumn (;) in this file
+  ## don't use pound (#) to comment lines
+  customPhpFpmConfig: |
+    ;pm.max_children=200
+    ;pm.status_path=/status
 
 ## Configure database creation/usage
 database:

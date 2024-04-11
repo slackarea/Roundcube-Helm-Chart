@@ -6,7 +6,8 @@
   * Upgraded `bitnami/common` to v2.19.1
   * Upgraded `nginx` to v1.25.4
   * Fixed non-working `ingress.path` setting (#8)
-  * Added setting `deployment.containers.nginx.image` to allow to override nginx image (!16)
+  * Added setting `deployment.containers.nginx.image` to allow to override nginx image (part of !16 by @ozguryazilimas)
+  * Added setting `config.customPhpFpmConfig` to allow to define custom PHP-FPM settings (part of !16 by @ozguryazilimas)
 
 ## v1.13.0
 

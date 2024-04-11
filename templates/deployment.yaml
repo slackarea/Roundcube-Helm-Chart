@@ -129,6 +129,9 @@ spec:
             - name: config
               mountPath: /var/roundcube/config/custom.php
               subPath: roundcube.config.php
+            - name: config
+              mountPath: /usr/local/etc/php-fpm.d/zzz-custom.conf
+              subPath: php-fpm.conf
             - name: shared-files
               mountPath: /var/www/html
           {{ if .Values.deployment.resources }}

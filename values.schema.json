@@ -96,6 +96,10 @@
         "customPhpConfig": {
           "description": "Custom configuration for PHP interpreter",
           "type": "string"
+        },
+        "customPhpFpmConfig": {
+          "description": "Custom configuration for PHP-FPM",
+          "type": "string"
         }
       },
       "required": [
