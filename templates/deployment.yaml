@@ -139,6 +139,7 @@ spec:
           {{ end }}
         - name: nginx
           image: {{ .Values.deployment.containers.nginx.image }}
+          imagePullPolicy: {{ .Values.deployment.containers.nginx.imagePullPolicy }}
           volumeMounts:
             - name: shared-files
               mountPath: /var/www/html

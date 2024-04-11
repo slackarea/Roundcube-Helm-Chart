@@ -10,7 +10,8 @@
     },
     "imagePullPolicy": {
       "description": "ImagePullPolicy for Roundcube Docker image",
-      "type": "string"
+      "type": "string",
+      "enum": ["Always", "Never", "IfNotPresent"]
     },
     "rbac": {
       "type": "object",
@@ -367,6 +368,11 @@
                 "image": {
                   "description": "Image used for the nginx container",
                   "type": "string"
+                },
+                "imagePullPolicy": {
+                  "description": "ImagePullPolicy for the nginx image",
+                  "type": "string",
+                  "enum": ["Always", "Never", "IfNotPresent"]
                 }
               }
             }
