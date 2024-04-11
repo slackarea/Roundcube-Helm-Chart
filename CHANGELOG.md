@@ -3,6 +3,7 @@
 ## v1.14.0
 
   * FINALLY! Upgraded roundcube to v1.6.6 (#6)
+  * Upgraded `bitnami/common` to v2.19.1
 
 ## v1.13.0
 
