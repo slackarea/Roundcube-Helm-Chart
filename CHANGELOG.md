@@ -5,6 +5,7 @@
   * FINALLY! Upgraded roundcube to v1.6.6 (#6)
   * Upgraded `bitnami/common` to v2.19.1
   * Upgraded `nginx` to v1.25.4
+  * Fixed non-working `ingress.path` setting (#8)
 
 ## v1.13.0
 

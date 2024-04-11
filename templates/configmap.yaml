@@ -25,6 +25,11 @@ data:
     {{- end -}}{{- end -}}{{- end }}
     {{ end }}
 
+    // ingress path config
+    {{ if .Values.ingress.enabled }}
+    $config['request_path'] = "{{ .Values.ingress.path }}";
+    {{ end }}
+
     // custom roundcube config
     {{- .Values.config.customRoundcubeConfig | default "" | nindent 4 }}
   nginx.conf: |
