@@ -225,6 +225,10 @@ deployment:
   ## Roundcube container's HTTP port
   port: 80
 
+  ## Define additional ImagePullSecrets.
+  imagePullSecrets:
+    ## You can refer to existing ImagePullSecrets as follows:
+    # - name: my-custom-secret
 
   ## Additional labels for the Deployment resource
   additionalLabels: {}

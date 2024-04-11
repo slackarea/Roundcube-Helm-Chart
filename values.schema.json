@@ -280,6 +280,22 @@
           "minimum": 1,
           "maximum": 65535
         },
+        "imagePullSecrets": {
+          "description": "Define additional ImagePullSecrets",
+          "type": ["null", "array"],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of the ImagePullSecret",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
         "additionalLabels": {
           "description": "Additional labels for the Deployment resource",
           "type": "object"

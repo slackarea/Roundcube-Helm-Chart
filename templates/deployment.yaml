@@ -163,6 +163,10 @@ spec:
             periodSeconds: 3
             initialDelaySeconds: 5
             failureThreshold: 3
+      imagePullSecrets:
+      {{- range .Values.deployment.imagePullSecrets }}
+        - name: {{ .name }}
+      {{- end }}
       volumes:
         - name: config
           configMap:
