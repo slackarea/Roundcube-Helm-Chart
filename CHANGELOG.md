@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.0
+
+  * Upgraded roundcube to v1.6.7
+
 ## v1.12.0
 
   * FINALLY! Upgraded roundcube to v1.6.6 (#6)
