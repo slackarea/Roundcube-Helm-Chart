@@ -31,11 +31,22 @@ spec:
       annotations:
         roundcube/config-checksum: {{ $configChecksum }}
     spec:
-      {{- if .Values.deployment.initContainers }}
+      {{- with .Values.deployment.initContainers }}
       initContainers:
-        {{- with .Values.deployment.initContainers }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
+      {{- range . }}
+        - name: {{ .name }}
+          image: {{ .image }}
+          {{- with .command }}
+          command: {{ toYaml . | nindent 10 }}
+          {{- end }}
+          {{- with .args }}
+          args: {{ toYaml . | nindent 10 }}
+          {{- end }}
+          {{- with $.Values.deployment.additionalVolumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- end }}
       {{- end }}
       {{- if or .Values.serviceAccount.create .Values.serviceAccount.name }}
       serviceAccountName: {{ include "roundcube.serviceAccountName" . }}
@@ -122,6 +133,9 @@ spec:
             {{- end }}
             - name: COMPOSER_ALLOW_SUPERUSER
               value: "1"
+            {{- with .Values.deployment.additionalEnv }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
           volumeMounts:
             - name: config
               mountPath: /usr/local/etc/php/conf.d/zzz-custom.ini
@@ -134,6 +148,9 @@ spec:
               subPath: php-fpm.conf
             - name: shared-files
               mountPath: /var/www/html
+            {{- with $.Values.deployment.additionalVolumeMounts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
           {{ if .Values.deployment.resources }}
           resources: {{ .Values.deployment.resources | toYaml | nindent 12 }}
           {{ end }}
@@ -174,6 +191,11 @@ spec:
             name: {{ include "common.names.fullname" . }}
         - name: shared-files
           emptyDir: {}
+        {{- with .Values.deployment.additionalVolumes }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+
+
       {{- if .Values.deployment.affinity }}
       affinity: {{- include "common.tplvalues.render" (dict "value" .Values.deployment.affinity "context" $) | nindent 8 }}
       {{- else }}

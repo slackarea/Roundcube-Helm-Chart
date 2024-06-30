@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.1
+
+  * Added `additionalEnv`, `additionalVolumeMounts` and `additionalVolumes` fields.
+
 ## v1.13.0
 
   * Upgraded roundcube to v1.6.7

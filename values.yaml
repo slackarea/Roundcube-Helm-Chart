@@ -256,6 +256,26 @@ deployment:
 
   ## Allow defining custom actions to be executed before deploying main container (e.g.: to prepare database)
   initContainers: []
+  #  - name: init
+  #    image: alpine:3
+  #    command: [sh, -c]
+  #    args:
+  #      - echo "Hello, world!" > /mnt/extra-storage/test
+
+  ## Additional volume mounts for the Deployment resource
+  additionalVolumeMounts: []
+  #  - name: extra-storage
+  #    mountPath: /mnt/extra-storage
+
+  ## Additional volumes for the Deployment resource
+  additionalVolumes: []
+  #  - name: extra-storage
+  #    emptyDir: {}
+
+  ## Additional environment variables for the Deployment resource
+  additionalEnv: []
+  #  - name: MY_ENV_VAR
+  #    value: value
 
   containers:
     nginx:
