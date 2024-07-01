@@ -355,7 +355,35 @@
         },
         "initContainers": {
           "description": "Additional custom actions to be executed before deploying main container (e.g.: to prepare database)",
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of the init container",
+                "type": "string"
+              },
+              "image": {
+                "description": "Image to be used for the init container",
+                "type": "string"
+              },
+              "command": {
+                "description": "Command to run in the init container",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "args": {
+                "description": "Arguments to the command run in the init container",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": ["name", "image"]
+          }
         },
         "additionalVolumeMounts": {
           "description": "Additional volume mounts that are added to the main container (e.g.: to set custom CA certificates)",
