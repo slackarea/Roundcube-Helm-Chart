@@ -353,7 +353,7 @@
             }
           } 
         },
-	"initContainers": {
+        "initContainers": {
           "description": "Additional custom actions to be executed before deploying main container (e.g.: to prepare database)",
           "type": "array"
         },
