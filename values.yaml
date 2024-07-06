@@ -261,6 +261,9 @@ deployment:
   #    command: [sh, -c]
   #    args:
   #      - echo "Hello, world!" > /mnt/extra-storage/test
+  #    volumeMounts:
+  #      - name: extra-storage
+  #        mountPath: /mnt/extra-storage
 
   ## Additional volume mounts for the Deployment resource
   additionalVolumeMounts: []
