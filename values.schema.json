@@ -357,6 +357,18 @@
           "description": "Additional custom actions to be executed before deploying main container (e.g.: to prepare database)",
           "type": "array"
         },
+        "additionalVolumeMounts": {
+          "description": "Additional volume mounts that are added to the main container (e.g.: to set custom CA certificates)",
+          "type": "array"
+        },
+        "additionalVolumes": {
+          "description": "Additional volumes that are added to the main container (e.g.: to set custom CA certificates)",
+          "type": "array"
+        },
+        "additionalEnv": {
+          "description": "Additional environment variables that are added to the main container",
+          "type": "array"
+        },
         "containers": {
           "description": "Container-specific configuration",
           "type": "object",
