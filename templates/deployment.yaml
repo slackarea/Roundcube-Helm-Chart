@@ -134,6 +134,8 @@ spec:
               subPath: php-fpm.conf
             - name: shared-files
               mountPath: /var/www/html
+            - name: plugins-volume
+              mountPath: /var/www/html/plugins
           {{ if .Values.deployment.resources }}
           resources: {{ .Values.deployment.resources | toYaml | nindent 12 }}
           {{ end }}
@@ -146,6 +148,8 @@ spec:
             - name: config
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
+            - name: plugins-volume
+              mountPath: /var/www/html/plugins
           ports:
             - containerPort: {{ .Values.deployment.port }}
               protocol: TCP
@@ -173,6 +177,8 @@ spec:
           configMap:
             name: {{ include "common.names.fullname" . }}
         - name: shared-files
+          emptyDir: {}
+        - name: plugins-volume
           emptyDir: {}
       {{- if .Values.deployment.affinity }}
       affinity: {{- include "common.tplvalues.render" (dict "value" .Values.deployment.affinity "context" $) | nindent 8 }}

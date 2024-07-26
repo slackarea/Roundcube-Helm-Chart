@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.1
+
+  * Added `plugins-volume` volume.
+
 ## v1.13.0
 
   * Upgraded roundcube to v1.6.7
