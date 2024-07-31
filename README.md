@@ -1,3 +1,14 @@
+# Temporary fork of https://gitlab.com/MatthiasLohr/roundcube-helm-chart
+
+### Adding Persisten Volume
+
+I try to add persistent volume!
+
+### Roundcube Helm Chart
+
+This Helm chart allows for an easy install of Roundcube webmail client to your Kubernetes cluster.
+
+
 # Roundcube Helm Chart
 
 This Helm chart allows for an easy install of [Roundcube webmail client](https://roundcube.net/) to your Kubernetes cluster.
