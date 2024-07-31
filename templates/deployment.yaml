@@ -134,6 +134,13 @@ spec:
               subPath: php-fpm.conf
             - name: shared-files
               mountPath: /var/www/html
+            - name: roundcube-data
+              {{- if .Values.persistence.enabled }}
+              persistentVolumeClaim:
+                claimName: {{ .Values.persistence.existingClaim | default (include "common.names.fullname" .) }}
+              {{- else }}
+              emptyDir: {}
+          {{- end }}
           {{ if .Values.deployment.resources }}
           resources: {{ .Values.deployment.resources | toYaml | nindent 12 }}
           {{ end }}
@@ -146,6 +153,8 @@ spec:
             - name: config
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
+            - name: rounducube-volume
+              mountPath: /var/www/html/plugins
           ports:
             - containerPort: {{ .Values.deployment.port }}
               protocol: TCP
