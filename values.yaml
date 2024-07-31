@@ -381,7 +381,7 @@ networkPolicy:
   ## Additional annotations for the NetworkPolicy
   additionalAnnotations: {}
 
-  ## Persistence Parameters
+## Persistence Parameters
 ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 ##
 persistence:
